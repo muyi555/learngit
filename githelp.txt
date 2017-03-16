@@ -1,0 +1,10 @@
+git init #create
+git add filename ##add temporary storage
+git commit -m "note"
+git log 
+git log --pretty=oneline
+git status
+git checkout -- filename
+git reset HEAD filename ##unstage
+git reset --hard
+git  

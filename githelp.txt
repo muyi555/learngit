@@ -1,4 +1,5 @@
 git init #create
+git-keygen -t rsa -C "youremail@example.com"
 git add filename ##add temporary storage
 git commit -m "note"
 git log 
@@ -19,9 +20,12 @@ git log --graph --pretty=oneline --abbrev-commit
 git stash list
 git stash drop
 git stash pop
+git remote -v
+git tag <name>
+git -a tag -m "note" commit id 
+git tag -s private tag -m "note" commit id
+git config --global color.ui ture
 
-
- 
 
 
 

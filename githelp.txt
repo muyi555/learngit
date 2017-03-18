@@ -7,4 +7,9 @@ git status
 git checkout -- filename
 git reset HEAD filename ##unstage
 git reset --hard
-git  
+git remote add origin git@github.com:muyi555/gitskills.git
+git push origin -u master
+git clone git@github.com:muyi555/gitskills.git
+git checkout -b dev
+git branch
+git merge 

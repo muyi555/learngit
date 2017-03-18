@@ -25,7 +25,8 @@ git tag <name>
 git -a tag -m "note" commit id 
 git tag -s private tag -m "note" commit id
 git config --global color.ui ture
-
+git check-ignore -v filename
+git config --global alias.st status
 
 
 

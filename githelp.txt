@@ -9,3 +9,5 @@ git reset HEAD filename ##unstage
 git reset --hard
 git  
 git branch -d file name
+
+

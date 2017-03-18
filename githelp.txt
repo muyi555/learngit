@@ -20,3 +20,6 @@ git branch -d file name
 
 
 >>>>>>> feature1
+git merge --no-ff -m "note" dev
+
+

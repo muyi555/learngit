@@ -5,6 +5,7 @@ git commit -m "note"
 git log 
 git log --pretty=oneline
 git status
+git rm filename
 git checkout -- filename
 git reset HEAD filename ##unstage
 git reset --hard
@@ -27,6 +28,16 @@ git tag -s private tag -m "note" commit id
 git config --global color.ui ture
 git check-ignore -v filename
 git config --global alias.st status
+git last
+
+yum install -y git
+adduser git
+id.rsa.pub >> home/git/.ssh/authorized_keys
+git init --bare filename.git
+chown -R git:git filename.git
+vi /etc/passwd
+git:x:1001:1001,,,:/home/git:/bin/bash
+git:x:1001:1001,,,:/home/git:/usr/bin/git-shell
 
 
 

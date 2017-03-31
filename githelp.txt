@@ -38,11 +38,3 @@ chown -R git:git filename.git
 vi /etc/passwd
 git:x:1001:1001,,,:/home/git:/bin/bash
 git:x:1001:1001,,,:/home/git:/usr/bin/git-shell
-
-
-
-
-
-
-
-

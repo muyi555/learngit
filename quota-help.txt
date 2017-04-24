@@ -1,0 +1,14 @@
+quotacheck -avugfM /mount_point
+quotaon -avug
+quotaon -vug /mount_point
+quotaoff -a
+quotaoff -ug /mount_point
+edquota -u usrname -g groupname
+edquota -t
+edquota -p oldaccount -u newaccount
+quota -uvs usrname
+quota -gvs groupname
+repquota -a -vugs
+warnquota
+setquota -u|-g name block(soft) block(hard) \
+>inode(soft) inode(hard) filesystem

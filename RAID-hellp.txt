@@ -1,0 +1,38 @@
+RAID-0(stripe)
+RAID-1(mirror)
+RAID 0+1 1+0
+RAID-5(Parity) Spare Disk
+
+mdadm 
+--create : create RAID
+--auto=yes : /dev/md[0-9]
+--raid-devices=N
+--spare-devices=N
+--level=[015]
+--detail : cat /dev/md[0-9] news
+
+cat /proc/mdstat
+mdadm --detail /dev/md[0-9]
+
+mdadm --manage /dev/md[0-9] [--add devices] [--remove devices] \
+>[--fail devices]
+
+mdadm --detail | grep -i uuid
+UUID:**********
+
+vi /etc/mdadm.conf
+ARRAY /dev/md0 UUID=*********
+
+vi /etc/fstab
+/dev/md0	/mnt/raid	ext4	defaults	1 2
+
+umount /dev/md0 
+mount -a
+df /mnt/raid 
+
+umount /dev/md0
+vim /etc/md0
+mdadm --stop /dev/md0
+vim /etc/mdadm.conf
+
+

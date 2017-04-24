@@ -1,0 +1,61 @@
+1.Type:
+auth account session password
+
+2.control flag:
+required requisite suffcient optional
+
+3.
+/etc/pam.d/*:configfile
+/lib/security/*:PAM module place directory
+/etc/security/*:PAM env configfile
+/usr/share/doc/pam-*/:PAN-info
+
+pam_securetty.so : limit root login in secure tty
+pam_nologin.so : limit generaluser whether can login
+pam_selinux.so : be directed against program regulation of authority
+pam_console.so : login in special terminal interface
+pam_loginuid.so : validate UID
+pam_env.so : set env variable
+pam_UNIX.so : validation phase authentication function
+pam_cracklib.so : check password strength
+pam_limits.so : provide ulimit function
+
+1.auth
+pam_securetty.so > root 
+/etc/securetty
+pam_env.so
+pam_UNIX.so > true
+	2>>login 
+else
+	pam_succeed_if.so UID ?< 500
+not record
+else
+	pam_deny.so
+
+2.account
+pam_nologin.so judgement /etc/nologin ?exist
+exist nologin generalusr 
+pam_UNIX 
+pam_succeed_if.so judgement UID?<500 
+pam_permit.so
+
+3.password
+pam_cracklib.so set falseinput three
+pam_UNIX.so md5,shadow
+>>login 
+else
+pam_deny.so
+
+4.session
+pam_selinux.so off SELinux
+pam_limits.so set usr can operate resource
+pam_loginuid.so set UID authority
+pam_selinux.so on
+
+
+
+
+
+
+
+	

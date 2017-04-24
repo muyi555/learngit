@@ -1,0 +1,17 @@
+setfacl 
+-m: set aclconfig give file
+-x: delete aclconfig 
+-b: delete all of aclconfig 
+-k: delete defaults aclconfig
+-R: recursion set aclconfig
+-d: set defaults aclconfig | directories
+
+getfacl filename
+
+
+
+
+
+
+
+
